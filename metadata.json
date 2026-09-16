@@ -1,0 +1,6 @@
+{
+  "name": "The Wedding of Luqman & Naila",
+  "description": "Undangan pernikahan digital modern dan elegan untuk Muhamad Luqman Hakim & Nailatus Sa'adah dengan detail acara, doa ucapan, dan amplop digital.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
