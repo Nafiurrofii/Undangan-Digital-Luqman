@@ -73,8 +73,18 @@ export function EventsSection() {
               {/* Subtle blue corner flourish */}
               <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-sky-100 to-transparent rounded-bl-full pointer-events-none" />
 
-              <h3 className="font-script text-3xl sm:text-4xl text-[#1b4965] mb-3">
-                {evt.title}
+              <h3 className="font-script text-3xl sm:text-4xl text-[#1b4965] mb-3 leading-tight">
+                {evt.title.includes(' & ') ? (
+                  <>
+                    {evt.title.split(' & ')[0]}
+                    <br />
+                    <span className="text-2xl sm:text-3xl opacity-70">&</span>
+                    <br />
+                    {evt.title.split(' & ')[1]}
+                  </>
+                ) : (
+                  evt.title
+                )}
               </h3>
 
               {/* Date */}
@@ -84,8 +94,8 @@ export function EventsSection() {
               </div>
 
               {/* Time */}
-              <div className="flex items-center justify-center gap-2 text-slate-600 text-xs mb-3">
-                <Clock className="w-3.5 h-3.5 text-sky-500" />
+              <div className="flex items-center justify-center gap-2 text-slate-700 text-xs sm:text-sm font-semibold mb-3">
+                <Clock className="w-4 h-4 text-sky-600" />
                 <span>{evt.timeStr}</span>
               </div>
 

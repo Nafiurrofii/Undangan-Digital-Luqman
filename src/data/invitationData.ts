@@ -32,24 +32,14 @@ export const weddingInfo = {
 
 export const weddingEvents: WeddingEvent[] = [
   {
-    id: 'akad',
-    title: 'Akad Nikah',
-    dateStr: 'Jumat, 27 November 2026',
-    timeStr: 'Rilex',
-    locationName: 'Kediaman Mempelai Perempuan',
-    address: 'di Rumah Mempelai Perempuan',
-    mapUrl: 'https://maps.app.goo.gl/jbZCACY9MmbBjcxB6?g_st=ac',
-    calendarTitle: 'Akad Nikah Luqman & Naila',
-  },
-  {
-    id: 'resepsi',
-    title: 'Resepsi',
+    id: 'akad-resepsi',
+    title: 'Akad Nikah & Resepsi',
     dateStr: 'Jumat, 27 November 2026',
     timeStr: 'Rilex',
     locationName: 'Kediaman Mempelai Perempuan',
     address: 'Jl. Ki Hajar Dewantara Dsn. Pesantren Ds. Jambangan Kec. Candi Kab. Sidoarjo',
     mapUrl: 'https://maps.app.goo.gl/jbZCACY9MmbBjcxB6?g_st=ac',
-    calendarTitle: 'Resepsi Pernikahan Luqman & Naila',
+    calendarTitle: 'Akad Nikah & Resepsi Luqman & Naila',
   },
   {
     id: 'ngunduh',
@@ -123,6 +113,11 @@ export const bankAccounts: BankAccount[] = [
     logoType: 'dana',
   },
 ];
+
+export const offlineGiftAddress = {
+  name: 'Nailatus Sa\'adah',
+  address: 'TPQ Al Hikmatul Hidayah, rt.02 rw.01 dsn. Pesantren Jambangan, Candi, Kab. Sidoarjo, Jawa Timur, Indonesia.',
+};
 
 export const initialWishes: WishItem[] = [
   {
