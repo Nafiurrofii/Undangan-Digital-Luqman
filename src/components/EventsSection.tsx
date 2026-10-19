@@ -169,44 +169,7 @@ export function EventsSection() {
           </p>
         </motion.div>
 
-        {/* Google Map Embedded Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-8 w-full bg-white rounded-3xl p-4 shadow-md border border-sky-100 flex flex-col items-center"
-        >
-          <div className="flex items-center gap-1.5 text-xs font-semibold text-[#1b4965] mb-3">
-            <MapPin className="w-4 h-4 text-sky-600" />
-            <span>Denpasar, Bali — Lokasi Acara</span>
-          </div>
 
-          <div className="w-full h-56 sm:h-64 rounded-2xl overflow-hidden border border-sky-100 shadow-inner">
-            <iframe
-              title="Peta Lokasi Acara"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126215.17646738927!2d115.14329241640624!3d-8.6726833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2409b0e5e80db%3A0xe27334e811e03102!2sDenpasar%2C%20Bali!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-
-          <motion.a
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            href="https://maps.google.com/?q=Denpasar+Bali"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[#1b4965] hover:underline"
-          >
-            <span>Petunjuk Arah Lewat Google Maps</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </motion.a>
-        </motion.div>
       </div>
     </section>
   );

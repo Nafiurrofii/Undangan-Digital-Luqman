@@ -16,7 +16,7 @@ export interface BankAccount {
   bankName: string;
   accountNumber: string;
   accountHolder: string;
-  logoType: 'bca' | 'danamon' | 'bri' | 'other';
+  logoType: 'bca' | 'danamon' | 'bri' | 'dana' | 'shopeepay' | 'other';
   qrCodeUrl?: string;
 }
 

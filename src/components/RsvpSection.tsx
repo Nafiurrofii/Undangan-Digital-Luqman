@@ -9,8 +9,6 @@ export function RsvpSection({ defaultGuestName = '' }: { defaultGuestName?: stri
   const [wishes, setWishes] = useState<WishItem[]>([]);
   const [name, setName] = useState(defaultGuestName);
   const [attendance, setAttendance] = useState<'hadir' | 'tidak_hadir' | 'ragu'>('hadir');
-  const [companion, setCompanion] = useState('2 Orang');
-  const [menu, setMenu] = useState('Menu Tradisional Nusantara');
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -42,8 +40,6 @@ export function RsvpSection({ defaultGuestName = '' }: { defaultGuestName?: stri
       id: 'wish-' + Date.now(),
       name: name.trim(),
       attendance,
-      companion: attendance === 'hadir' ? companion : undefined,
-      menu: attendance === 'hadir' ? menu : undefined,
       message: message.trim(),
       timestamp: new Date().toISOString().replace('T', ' ').substring(0, 19),
     };
@@ -164,46 +160,7 @@ export function RsvpSection({ defaultGuestName = '' }: { defaultGuestName?: stri
               </div>
             </div>
 
-            {/* Jumlah Tamu (jika hadir) */}
-            {attendance === 'hadir' && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="space-y-3 pt-1 border-t border-sky-100"
-              >
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    Jumlah Tamu
-                  </label>
-                  <select
-                    value={companion}
-                    onChange={(e) => setCompanion(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl border border-sky-200 text-xs text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-sky-400 bg-sky-50/30 cursor-pointer"
-                  >
-                    <option value="1 Orang">1 Orang (Sendiri)</option>
-                    <option value="2 Orang">2 Orang (Berdua / Pasangan)</option>
-                    <option value="3 Orang">3 Orang (Keluarga Kecil)</option>
-                    <option value="4 Orang">4 Orang (Rombongan Keluarga)</option>
-                  </select>
-                </div>
 
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    Preferensi Santapan
-                  </label>
-                  <select
-                    value={menu}
-                    onChange={(e) => setMenu(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl border border-sky-200 text-xs text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-sky-400 bg-sky-50/30 cursor-pointer"
-                  >
-                    <option value="Menu Tradisional Nusantara">Menu Tradisional Nusantara</option>
-                    <option value="Western Gourmet">Western Gourmet</option>
-                    <option value="Special Vegetarian">Special Vegetarian</option>
-                  </select>
-                </div>
-              </motion.div>
-            )}
 
             {/* Submit Button */}
             <motion.button
@@ -263,16 +220,11 @@ export function RsvpSection({ defaultGuestName = '' }: { defaultGuestName?: stri
                   {item.message}
                 </p>
 
-                <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400">
+                <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center text-[10px] text-slate-400">
                   <span className="flex items-center gap-1">
                     <Clock className="w-3 h-3 text-slate-300" />
                     {item.timestamp}
                   </span>
-                  {item.companion && (
-                    <span className="text-slate-500 font-medium">
-                      {item.companion} {item.menu && `• ${item.menu}`}
-                    </span>
-                  )}
                 </div>
               </motion.div>
             ))}

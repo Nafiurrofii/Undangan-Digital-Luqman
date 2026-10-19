@@ -14,6 +14,7 @@ export const weddingInfo = {
   bride: {
     nickname: 'Naila',
     fullName: 'Nailatus Sa\'adah',
+    address: 'TPQ Al Hikmatul Hidayah, rt.02 rw.01 dsn. Pesantren Jambangan, Candi, Kab. Sidoarjo, Jawa Timur, Indonesia.',
     fatherName: 'Bapak Shibro Malisi',
     motherName: 'Ibu Muamalah',
     city: '',
@@ -34,11 +35,31 @@ export const weddingEvents: WeddingEvent[] = [
     id: 'akad',
     title: 'Akad Nikah',
     dateStr: 'Jumat, 27 November 2026',
-    timeStr: 'Pukul 08:00 WIB - Selesai',
-    locationName: 'Kediaman Mempelai Wanita',
-    address: 'Rumah Mempelai Wanita',
-    mapUrl: 'https://maps.google.com/?q=Rumah+Mempelai+Wanita',
+    timeStr: 'Rilex',
+    locationName: 'Kediaman Mempelai Perempuan',
+    address: 'di Rumah Mempelai Perempuan',
+    mapUrl: 'https://maps.app.goo.gl/jbZCACY9MmbBjcxB6?g_st=ac',
     calendarTitle: 'Akad Nikah Luqman & Naila',
+  },
+  {
+    id: 'resepsi',
+    title: 'Resepsi',
+    dateStr: 'Jumat, 27 November 2026',
+    timeStr: 'Rilex',
+    locationName: 'Kediaman Mempelai Perempuan',
+    address: 'Jl. Ki Hajar Dewantara Dsn. Pesantren Ds. Jambangan Kec. Candi Kab. Sidoarjo',
+    mapUrl: 'https://maps.app.goo.gl/jbZCACY9MmbBjcxB6?g_st=ac',
+    calendarTitle: 'Resepsi Pernikahan Luqman & Naila',
+  },
+  {
+    id: 'ngunduh',
+    title: 'Ngunduh Mantu',
+    dateStr: 'Minggu, 29 November 2026',
+    timeStr: 'Rilex',
+    locationName: 'Kediaman Mempelai Laki-laki',
+    address: 'Dsn. Gebangsiwil Ds. Bukur Kec. Patianrowo Kab. Nganjuk',
+    mapUrl: 'https://maps.app.goo.gl/T9EX7efRiP1344fG8',
+    calendarTitle: 'Ngunduh Mantu Luqman & Naila',
   },
 ];
 
@@ -88,25 +109,18 @@ export const timelineItems: TimelineItem[] = [
 
 export const bankAccounts: BankAccount[] = [
   {
-    id: 'bca-1',
-    bankName: 'BCA',
-    accountNumber: '12345678',
+    id: 'dana-bride',
+    bankName: 'Dana',
+    accountNumber: '085748261931',
     accountHolder: 'Nailatus Sa\'adah',
-    logoType: 'bca',
+    logoType: 'dana',
   },
   {
-    id: 'danamon-1',
-    bankName: 'Bank Mandiri',
-    accountNumber: '0982309823',
+    id: 'dana-groom',
+    bankName: 'Dana / Shopeepay',
+    accountNumber: '085748151295',
     accountHolder: 'Muhamad Luqman Hakim',
-    logoType: 'danamon',
-  },
-  {
-    id: 'bri-1',
-    bankName: 'Bank BRI',
-    accountNumber: '123456789123',
-    accountHolder: 'Nailatus Sa\'adah',
-    logoType: 'bri',
+    logoType: 'dana',
   },
 ];
 
