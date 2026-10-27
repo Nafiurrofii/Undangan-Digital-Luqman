@@ -6,7 +6,7 @@
 import { WishItem } from '../types';
 
 // URL Google Apps Script — langsung di-hardcode karena bukan data sensitif
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw73dV1obVyLQlVZf-4OTjIPa0pHi-JSg9FPOBtwU0aY9oKkYIk8WjS5RxBlQL1kuVH/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJETBUlhQfh-Sp_5d6_3gPjIu7WExinEgE5RIqDTAwJKTyhOiNvj2gj2LQpCxshQGp/exec';
 
 export interface SheetResponse {
   success: boolean;
