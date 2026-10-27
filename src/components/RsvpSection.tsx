@@ -4,6 +4,7 @@ import { Send, CheckCircle2, MessageSquare, Clock, UserCheck, UserX, HelpCircle,
 import { FloralHeader } from './FloralDecorations';
 import { initialWishes } from '../data/invitationData';
 import { WishItem } from '../types';
+import { submitRsvpToSheet } from '../utils/googleSheets';
 
 export function RsvpSection({ defaultGuestName = '' }: { defaultGuestName?: string }) {
   const [wishes, setWishes] = useState<WishItem[]>([]);
@@ -32,7 +33,7 @@ export function RsvpSection({ defaultGuestName = '' }: { defaultGuestName?: stri
     }
   }, []);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !message.trim()) return;
 
@@ -44,6 +45,7 @@ export function RsvpSection({ defaultGuestName = '' }: { defaultGuestName?: stri
       timestamp: new Date().toISOString().replace('T', ' ').substring(0, 19),
     };
 
+    // Simpan ke state & localStorage (fallback offline)
     const updated = [newWish, ...wishes];
     setWishes(updated);
     try {
@@ -51,6 +53,11 @@ export function RsvpSection({ defaultGuestName = '' }: { defaultGuestName?: stri
     } catch {
       // ignore
     }
+
+    // Kirim ke Google Spreadsheet (non-blocking)
+    submitRsvpToSheet(newWish).catch((err) => {
+      console.warn('[RSVP] Gagal kirim ke spreadsheet:', err);
+    });
 
     setIsSubmitted(true);
     setMessage('');
